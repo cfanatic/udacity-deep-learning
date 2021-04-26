@@ -15,3 +15,6 @@ The network has two layers, a hidden layer and an output layer. The hidden layer
 ![Predicted Output](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/99-misc/project1_prediction.png)
 
 I believe the prediction is quite good up to December 21. However, I notice that there is a general offset between prediction and test data. This happens on December 15, for example. This means that training could still be improved. But I wanted to avoid overfitting. There is a negative prediction of bike users between December 16 and 17. This does not make sense and it needs to be fixed: Somehow the output of the neural network must be limited to positive values only. Also, there is an obvious mismatch between prediction and test data starting from December 21 onwards. Although holidays are flagged in the dataset, I assume that the dataset is generally biased towards regular working days and not towards the holiday season. Concerning the general offset between prediction and test data, I believe it is a better idea to randomize weights each iteration instead just once in the class constructor.
+
+## [Project 2](https://github.com/cfanatic/udacity-deep-learning/tree/master/2-project-dog-classification)
+
