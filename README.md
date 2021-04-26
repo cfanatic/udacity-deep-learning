@@ -18,3 +18,12 @@ I believe the prediction is quite good up to December 21. However, I notice that
 
 ## [Project 2](https://github.com/cfanatic/udacity-deep-learning/tree/master/2-project-dog-classification)
 
+The task of this project was to build a convolutional neural network for image classification. The code accepts any user-supplied image as input. If a dog is detected in the image, it will provide an estimate of the dog's breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling.
+
+I designed and trained my own convolutional neural network from scratch, and also applied transfer learning on a ResNet-101 model with a final accuracy of 85%. One of the predicted outputs confirms that adversarial attacks on neural networks are an important subject of research.
+
+![Dog](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/99-misc/project2_dog.png)
+
+![Human](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/99-misc/project2_human.png)
+
+![Error](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/99-misc/project2_error.png)
