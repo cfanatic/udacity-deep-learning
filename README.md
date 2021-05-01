@@ -20,8 +20,10 @@ I believe the prediction is quite good up to December 21. However, I notice that
 
 The task of this project was to build a convolutional neural network for image classification. The code accepts any user-supplied image as input. If a dog is detected in the image, it will provide an estimate of the dog's breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling.
 
-I designed and trained my own convolutional neural network from scratch, and also applied transfer learning on a ResNet-101 model with a final accuracy of 85%. The second image confirms that adversarial attacks on neural networks are an important subject of research.
+I designed and trained my own convolutional neural network from scratch, and also applied transfer learning on a ResNet-101 model with a final accuracy of 85%.
 
 ![Dog](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/99-misc/project2_dog.png)
 
 ![Human](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/99-misc/project2_human.png)
+
+The lower image confirms that neural networks are vulnerable towards adversarial attacks. The implemented CNN is not able to distinguish between a real face and a fake mask. Adversarial attacks are an important field of research for self-driving cars, since computer vision algorithms for traffic light and street sign detection could be fooled in similar ways.
