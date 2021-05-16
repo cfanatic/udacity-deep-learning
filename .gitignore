@@ -1,4 +1,5 @@
 /**/.ipynb_checkpoints/
+/**/__pycache__/
 .vscode/settings.json
 2-project-dog-classification/**/lfw
 2-project-dog-classification/**/dogImages
