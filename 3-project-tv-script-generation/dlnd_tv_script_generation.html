@@ -14283,7 +14283,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="TV-Script-Generation">TV Script Generation<a class="anchor-link" href="#TV-Script-Generation">&#182;</a></h1><p>In this project, you'll generate your own Seinfeld TV scripts using RNNs.  You'll be using part of the <a href="https://www.kaggle.com/thec03u5/seinfeld-chronicles#scripts.csv">Seinfeld dataset</a> of scripts from 9 seasons.  The Neural Network you'll build will generate a new ,"fake" TV script, based on patterns it recognizes in this training data.</p>
-<h2 id="Get-the-Data">Get the Data<a class="anchor-link" href="#Get-the-Data">&#182;</a></h2><p>The data is already provided for you in <code>./data/Seinfeld_Scripts.txt</code> and you're encouraged to open that file and look at the text.</p>
+<h2 id="Get-the-Data">Get the Data<a class="anchor-link" href="#Get-the-Data">&#182;</a></h2><p>The data is already provided for you in <code>./data/seinfeld_scripts.txt</code> and you're encouraged to open that file and look at the text.</p>
 <ul>
 <li>As a first step, we'll load in this data and look at some samples. </li>
 <li>Then, you'll be tasked with defining and training an RNN to generate a new script!</li>
@@ -14412,7 +14412,7 @@ jerry: well, senator, id just like to know, what you knew and when you knew it.
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="kn">import</span> <span class="nn">problem_unittests</span> <span class="k">as</span> <span class="nn">tests</span>
+<span class="kn">import</span> <span class="nn">tester</span> <span class="k">as</span> <span class="nn">tests</span>
 
 <span class="k">def</span> <span class="nf">create_lookup_tables</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -14581,7 +14581,7 @@ jerry: well, senator, id just like to know, what you knew and when you knew it.
 <span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">helper</span>
-<span class="kn">import</span> <span class="nn">problem_unittests</span> <span class="k">as</span> <span class="nn">tests</span>
+<span class="kn">import</span> <span class="nn">tester</span> <span class="k">as</span> <span class="nn">tests</span>
 
 <span class="n">int_text</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">,</span> <span class="n">int_to_vocab</span><span class="p">,</span> <span class="n">token_dict</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">load_preprocess</span><span class="p">()</span>
 </pre></div>
@@ -15451,7 +15451,7 @@ I have found out that a small learning rate of <code>lr = 0.001</code> and a lar
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">helper</span>
-<span class="kn">import</span> <span class="nn">problem_unittests</span> <span class="k">as</span> <span class="nn">tests</span>
+<span class="kn">import</span> <span class="nn">tester</span> <span class="k">as</span> <span class="nn">tests</span>
 
 <span class="n">_</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">,</span> <span class="n">int_to_vocab</span><span class="p">,</span> <span class="n">token_dict</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">load_preprocess</span><span class="p">()</span>
 <span class="n">trained_rnn</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;./save/model_trained&#39;</span><span class="p">)</span>
@@ -15662,8 +15662,8 @@ kramer: oh yeah, you know i was gonna get out
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="The-TV-Script-is-Not-Perfect">The TV Script is Not Perfect<a class="anchor-link" href="#The-TV-Script-is-Not-Perfect">&#182;</a></h1><p>It's ok if the TV script doesn't make perfect sense. It should look like alternating lines of dialogue, here is one such example of a few generated lines.</p>
-<h3 id="Example-generated-script:">Example generated script:<a class="anchor-link" href="#Example-generated-script:">&#182;</a></h3><blockquote><p>jerry: what about me?</p>
+<h1 id="The-TV-Script-is-Not-Perfect">The TV Script is Not Perfect<a class="anchor-link" href="#The-TV-Script-is-Not-Perfect">&#182;</a></h1><p>It's ok if the TV script doesn't make perfect sense. It should look like alternating lines of dialogue, here is one such example of a few generated lines:</p>
+<blockquote><p>jerry: what about me?</p>
 <p>jerry: i don't have to wait.</p>
 <p>kramer:(to the sales table)</p>
 <p>elaine:(to jerry) hey, look at this, i'm a good doctor.</p>
@@ -15675,7 +15675,6 @@ kramer: oh yeah, you know i was gonna get out
 <p>kramer:(laughing) you know...(to jerry) you don't know.</p>
 </blockquote>
 <p>You can see that there are multiple characters that say (somewhat) complete sentences, but it doesn't have to be perfect! It takes quite a while to get good results, and often, you'll have to use a smaller vocabulary (and discard uncommon words), or get more data.  The Seinfeld dataset is about 3.4 MB, which is big enough for our purposes; for script generation you'll want more than 1 MB of text, generally.</p>
-<h1 id="Submitting-This-Project">Submitting This Project<a class="anchor-link" href="#Submitting-This-Project">&#182;</a></h1><p>When submitting this project, make sure to run all the cells before saving the notebook. Save the notebook file as "dlnd_tv_script_generation.ipynb" and save another copy as an HTML file by clicking "File" -&gt; "Download as.."-&gt;"html". Include the "helper.py" and "problem_unittests.py" files in your submission. Once you download these files, compress them into one zip file for submission.</p>
 
 </div>
 </div>
