@@ -75,3 +75,17 @@ The model is comprised of two adversarial networks, the discriminator and genera
 I am quite surprised how well the DCGAN performed. The Generator definitely generated new images of faces that look realistic. You can even distinguish between men and women. I would not be able to tell that the two faces shown on the far bottom left corner were based from a random uniform distribution. But there are some obvious generation errors, such as weird color artifacts.
 
 In terms of improvement, I would suggest to remove training images that show faces from the side. This is basically noise, because these images do not fall into the portrait category. Also, people with dark glasses might have negative influence on the training process. The black spot on the bottom right corner image may be related to this problem.
+
+## [Project 5: Deployment using Amazon SageMaker](https://github.com/cfanatic/udacity-deep-learning/tree/master/5-project-sentiment-analysis)
+
+In the final project, I created a web app for binary sentiment classification of movie reviews. I trained a recurrent neural network with a LSTM layer on the IMDb dataset using SageMaker, and deployed it to production with a RESTful endpoint using Amazon's Lambda and API Gateway services. The end-to-end processing is depicted below:
+
+![Source: https://github.com/hjlopes/sagemaker-sentiment-analysis](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/5-project-sentiment-analysis/images/diagram.svg)
+
+Whenever a HTTP POST request from the web app is received by the API Gateway, the Lambda function is called and forwards the review content to the model's endpoint which is hosted on AWS. The model performs inference on this input data, and returns the classification result to the web app.
+
+For testing I have selected a review based on the movie *Jurassic Park*, which has with a 10-of-10 point score:
+
+![Classification Results](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/5-project-sentiment-analysis/images/review_positive.png)
+
+Closing remarks: I think it was a good decision to implement a RNN with LSTM cells for sentiment analysis. Models like this are sequence-dependent which enables them to store textual context in their cell state. Some movie reviews are ironic or sarcastic which may lead to false-positive classifications if a multi-layer perceptron would have been implemented instead.
