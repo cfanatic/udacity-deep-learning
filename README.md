@@ -84,7 +84,7 @@ In the final project, I created a web app for binary sentiment classification of
 
 Whenever a HTTP POST request from the web app is received by the API Gateway, the Lambda function is called and forwards the review content to the model's endpoint which is hosted on AWS. The model performs inference on this input data, and returns the classification result to the web app.
 
-For testing I have selected a review based on the movie *Jurassic Park*, which has with a 10-of-10 point score:
+For testing I have selected a review based on the movie *Jurassic Park*, which has a 10-of-10 point score:
 
 ![Classification Results](https://raw.githubusercontent.com/cfanatic/udacity-deep-learning/master/5-project-sentiment-analysis/images/review_positive.png)
 
